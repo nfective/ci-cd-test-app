@@ -1,1 +1,4 @@
-* littlewhiteloti 
+* @LittleWhiteLoti
+*.js @LittleWhiteLoti
+/**/*.js @LittleWhiteLoti
+/public/ @LittleWhiteLoti
