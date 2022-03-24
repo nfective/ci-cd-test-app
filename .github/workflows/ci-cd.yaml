@@ -1,20 +1,20 @@
 name: test
 
 on:
-    pull_request:
-        branches: [develope]
+  pull_request:
+    branches: [develope]
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-            - name: Use NodeJS
-              uses: actions/setup-node@v1
-              with:
-                node-version: "12.x"
-            - run: npm ci
-            - run: npm run format:check
-            - run: npm test -- --coverage
-              env:
-                  CI: true
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use NodeJS
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - run: npm ci
+      - run: npm run format:check
+      - run: npm test -- --coverage
+        env:
+          CI: true
