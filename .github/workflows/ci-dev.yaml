@@ -35,12 +35,12 @@ jobs:
           name: build
           path: build
       - name: Create release
-        if: github.event_name == "push" && github.ref == "refs/head/main"
+        if: github.event_name == 'push' && github.ref == 'refs/head/main'
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy to Staging
-        if: github.event_name == "push"
+        if: github.event_name == 'push'
         run: npx surge --project ./build --domain small-iron.surge.sh
         env:
           SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
