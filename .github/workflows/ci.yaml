@@ -12,9 +12,9 @@ jobs:
       - name: cache node_modules
         uses: actions/cache@v1
         with:
-          path: ~/.npm  
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-key: |
+          path: ~/.npm
+          key: Linux-node-32c34f3ce889ea5c16ca8bdf0a9558b8fef43b1ef34bff321e8350035838156c
+          restore-keys: |
             ${{ runner.os }}-node-
       - name: Use NodeJS
         uses: actions/setup-node@v1
