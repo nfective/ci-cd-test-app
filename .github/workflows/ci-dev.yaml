@@ -12,7 +12,9 @@ jobs:
       - name: Use NodeJS
         uses: actions/setup-node@v1
         with:
-          node-version: "12.x"
+          # node-version: "12.x"
+          # semantic-release only supports ^14.17
+          node-version: "16"
       - run: npm ci
       - run: npm run format:check
       - run: npm run format
@@ -35,7 +37,7 @@ jobs:
           name: build
           path: build
       - name: Create release
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: github.event_name == 'push' && github.ref == 'refs/head/main'
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
