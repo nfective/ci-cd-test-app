@@ -1,5 +1,5 @@
 module.exports = {
-  branches: "master",
+  branches: "main",
   repositoryUrl: "https://github.com/nfective/ci-cd-test-app",
   plugins: [
     "@semantic-release/commit-analyzer",
