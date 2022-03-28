@@ -21,7 +21,7 @@ jobs:
           # semantic-release only supports ^14.17
           node-version: "16"
       - run: npm ci
-      - run: npm run format:check
+      - run: npm run format-check
       - run: npm run format
         # continue-on-error: true
       - run: npm test -- --coverage
