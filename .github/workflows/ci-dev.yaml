@@ -63,7 +63,8 @@ jobs:
           curl --request POST \
           --url https://api.github.com/repos/${{ github.repository }}/issues \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-          --header 'Content-type: application/json' \
-          -- data '{ "title": "Automated issue was automatically created by Github Action Workflow
-          **${{ github.workflow }}** \n\n The commit hash was: _${{ github.sha }}_." },
+          --header 'Content-Type: application/json' \
+          --data '{ "title": "Automated issue for commit: ${{ github.sha }}",
+          "body": "This issue was automatically created by Github Action Workflow
+          **${{ github.workflow }}** \n\n The commit hash was: _${{ github.sha }}_.",
           "assignees": ["${{ github.event.pull_request.user.login }}"]}'
