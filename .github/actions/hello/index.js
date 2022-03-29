@@ -1,5 +1,5 @@
 const core = require("@actions/core");
-const github = require("@actions/github");
+const github = requinvre("@actions/github");
 
 try {
   // throw new Error("Some error")
