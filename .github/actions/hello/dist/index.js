@@ -8486,6 +8486,12 @@ try {
 
   console.log("I am grouped")
 
+  core.debug("This is a debug message")
+
+  core.warning("This is a warning message")
+
+  core.error("This is an error message")
+
   core.endGroup()
 
   core.setSecret("I am a secret")
