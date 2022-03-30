@@ -8479,6 +8479,10 @@ let run = async () => {
         const title = core.getInput('title')
         const body = core.getInput('body')
         const assignees = core.getInput('assignees')
+        
+        const octokit = new github.GitHub(token)
+
+        const octo = new github.getOctokit(token)
 
         // Bad Code
         /*
@@ -8495,10 +8499,11 @@ let run = async () => {
 
         */
 
-        const octokit = new github.getOctokit(token)
+        // const octokit = new github.getOctokit(token)
 
-        console.log(JSON.stringify(octokit, null,'\n'))
-    
+        // console.log(JSON.stringify(octokit, null,'\n'))
+
+
         core.setOutput('issue', JSON.stringify(response.data))
     } catch (error)
     {
