@@ -8493,6 +8493,7 @@ let run = async () => {
         core.setOutput('issue', JSON.stringify(response.data))
     } catch (error)
     {
+        console.log(error)
         core.setFailed(error.message)
     }
 
