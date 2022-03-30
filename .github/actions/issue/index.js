@@ -2,7 +2,7 @@ const core = require('@actions/core')
 
 const github = require('@actions/github')
 
-let run = async () => {
+async function run() {
 
     try {
         const token = core.getInput('token')
@@ -13,12 +13,14 @@ let run = async () => {
         const octokit = new github.getOctokit(token)
 
         const response = await octokit.rest.issues.create({
-            owner: github.context.repo.owner,
-            repo: github.context.repo.repo,
-            title: title,
-            body: body,
-            assignees: assignees ? assignees.split('\n') : undefined            
+            //owner: github.context.repo.owner,
+            //repo: github.context.repo.repo,
+            ...github.context.repo,
+            title,
+            body,
+            assignees: assignees ? assignees.split("\n") : undefined   ,        
         })
+        await octokit.rest.issues.repo
 
         core.setOutput('issue', JSON.stringify(response.data))
     } catch (error)
