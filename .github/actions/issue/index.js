@@ -12,7 +12,7 @@ let run = async () => {
 
         const octokit = new github.getOctokit(token)
 
-        const { data: response } = await octokit.rest.issues({
+        const { data: response } = await octokit.rest.issues.create({
             owner: github.context.repo.owner,
             repo: github.context.repo.repo,
             title: title,
