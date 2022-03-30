@@ -10,7 +10,9 @@ let run = async () => {
         const body = core.getInput('body')
         const assignees = core.getInput('assignees')
     
-        const octokit = new github.GitHub(token)
+        console.log(JSON.stringify(github))
+
+        const octokit = new github.Github(token)
     
         const response = await octokit.create({
             owner: github.context.repo.owner,
