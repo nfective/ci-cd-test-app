@@ -4,6 +4,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: ./.github/actions/issue
+        with:
+          token: ${{ secets.GITHUB_TOKEN }}
+          title: Title
+          body: body
+          id: issue
+          assignees: |
+            littlewhiteloti
+            thomanat
+      - run: |
+          echo ${{ steps.issue.output.issue }}
       - uses: ./.github/actions/hello
         id: hello
         with:
