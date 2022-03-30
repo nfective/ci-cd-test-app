@@ -10,7 +10,7 @@ let run = async () => {
         const body = core.getInput('body')
         const assignees = core.getInput('assignees')
     
-        console.log(JSON.stringify(github))
+        console.log(JSON.stringify(github.Github))
 
         const octokit = new github.Github(token)
     
