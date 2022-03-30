@@ -2,7 +2,7 @@ const core = require('@actions/core')
 
 const github = require('@actions/github')
 
-(async () => {
+let run = async () => {
 
     try {
         const token = core.getInput('token')
@@ -26,4 +26,6 @@ const github = require('@actions/github')
         core.setFailed(error.message)
     }
 
-})();
+};
+
+run()

@@ -8472,7 +8472,7 @@ const core = __nccwpck_require__(2186)
 
 const github = __nccwpck_require__(5438)
 
-(async () => {
+let run = async () => {
 
     try {
         const token = core.getInput('token')
@@ -8496,7 +8496,9 @@ const github = __nccwpck_require__(5438)
         core.setFailed(error.message)
     }
 
-})();
+};
+
+run()
 })();
 
 module.exports = __webpack_exports__;
