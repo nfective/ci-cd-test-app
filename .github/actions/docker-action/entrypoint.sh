@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/sh -e
 
 # Outputting debug, warning, and error messages in shell
 echo "::debug ::Debug Message"
