@@ -14,14 +14,18 @@ jobs:
             LittleWhiteLoti
       - run: |
           echo ${{ steps.issue.outputs.issue }}
-      - uses: ./.github/actions/hello
-        id: hello
-        with:
-          who-to-greet: "World"
+      # - uses: ./.github/actions/hello
+      #   id: hello
+      #   with:
+      #     who-to-greet: "World"
+      # - run: |
+      #     echo "Time: ${{ steps.hello.outputs.time }}"
+      #     echo $Greet
       - uses: ./.github/actions/docker-action
-        id: hello2
+        id: hello
         with:
           who-to-greet: "World"
       - run: |
           echo "Time: ${{ steps.hello.outputs.time }}"
           echo $Greet
+

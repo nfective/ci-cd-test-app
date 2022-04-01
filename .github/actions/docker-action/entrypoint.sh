@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/sh
 
 # Outputting debug, warning, and error messages in shell
 echo "::debug ::Debug Message"
@@ -23,4 +23,4 @@ echo "some stuff"
 echo "::endgroup::"
 
 # Exporting environment variable in shell
-echo "::set-env name=HELLO2::hello'
+echo "::set-env name=HELLO::hello'
