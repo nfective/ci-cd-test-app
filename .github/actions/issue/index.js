@@ -21,7 +21,7 @@ async function run() {
         //     assignees: assignees ? assignees.split("\n") : undefined   ,        
         // })
 
-        const octokit = new github.github.token(token)
+        const octokit = new github.GitHub.token(token)
 
         const response = octokit.issues.create({
             ...github.context.repo,
