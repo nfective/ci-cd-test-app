@@ -1,4 +1,4 @@
-name: Open Github Issue
+name: "Open Github Issue"
 author: White Lotus
 description: "Open Github Issue"
 inputs:

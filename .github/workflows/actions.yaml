@@ -11,10 +11,9 @@ jobs:
           title: Title
           body: body
           assignees: |
-            littlewhiteloti
-            thomanat
+            LittleWhiteLoti
       - run: |
-          echo ${{ steps.issue.output.issue }}
+          echo ${{ steps.issue.outputs.issue }}
       - uses: ./.github/actions/hello
         id: hello
         with:
