@@ -1,0 +1,17 @@
+name: Hello World
+author: White Lotus
+description: Some description
+inputs:
+  who-to-greet:
+    description: "Who to greet"
+    required: true
+    default: Lotus
+outputs:
+  time:
+    description: "The greeting time"
+runs:
+  using: "docker"
+  # image: "docker://{{ image_name }}:{{ tag_name }}"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.who-to-greet }}
